@@ -1,3 +1,4 @@
+// List of possible animals (with "the" in front)
 const animals = [
   "the ostrich",
   "the cat",
@@ -11,6 +12,7 @@ const animals = [
   "the kangaroo"
 ];
 
+// List of possible verbs
 const verbs = [
   "eats",
   "knocks over",
@@ -24,6 +26,7 @@ const verbs = [
   "dreams about"
 ];
 
+// List of possible items / objects
 const items = [
   "earthworms",
   "a glass of water",
@@ -37,11 +40,13 @@ const items = [
   "a mysterious box"
 ];
 
+// Return one random element from any array
 const getRandomElement = (array) => {
   const index = Math.floor(Math.random() * array.length);
   return array[index];
 };
 
+// Build one full random sentence
 const generateMessage = () => {
   const animal = getRandomElement(animals);
   const verb = getRandomElement(verbs);
@@ -50,7 +55,7 @@ const generateMessage = () => {
   return `${animal} ${verb} ${item}`;
 };
 
-// If running in the browser, wire up the button and output.
+// If running in the browser, connect the button and the output area
 if (typeof document !== "undefined") {
   const button = document.getElementById("generate-btn");
   const output = document.getElementById("message-output");
@@ -64,7 +69,7 @@ if (typeof document !== "undefined") {
   }
 }
 
-// If running with Node.js (no document), log one random message.
+// If running with Node.js (no document), log one random message
 if (typeof document === "undefined") {
   console.log(generateMessage());
 }
