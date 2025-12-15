@@ -24,13 +24,15 @@ In your case, you are building a **sentence generator with animals, verbs, and c
 - Create **multiple data collections** (arrays, objects) for the different parts of the message.
 - **Randomly select** one element from each collection.
 - **Combine** these elements to form a full sentence.
-- **Display** the message to the user (in the console or in another way).
+- **Display** the message to the user:
+  - either in the **console** when running the script with Node.js,
+  - or in a **simple web interface** with a “Generate message” button.
 
 ### Expected result
 
 By the end of the project, you will have a **standalone JavaScript program** that:
 
-- Generates a **different, random message** every time it runs.
+- Generates a **different, random message** every time it runs or every time the user clicks the button.
 - Combines **at least three pieces of information** to build this message.
-- Can easily be **modified and extended** (new texts, new data, new display formats).
+- Can easily be **modified and extended** (new texts, new data, new display formats or new UI).
 
