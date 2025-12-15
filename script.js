@@ -37,8 +37,34 @@ const items = [
   "a mysterious box"
 ];
 
-const generateMessage = (animal, verb, item) => {
-    return `${animal} ${verb} ${item}`;
+const getRandomElement = (array) => {
+  const index = Math.floor(Math.random() * array.length);
+  return array[index];
+};
+
+const generateMessage = () => {
+  const animal = getRandomElement(animals);
+  const verb = getRandomElement(verbs);
+  const item = getRandomElement(items);
+
+  return `${animal} ${verb} ${item}`;
+};
+
+// If running in the browser, wire up the button and output.
+if (typeof document !== "undefined") {
+  const button = document.getElementById("generate-btn");
+  const output = document.getElementById("message-output");
+
+  if (button && output) {
+    button.addEventListener("click", () => {
+      const message = generateMessage();
+      output.textContent = message;
+      output.classList.remove("empty");
+    });
+  }
 }
 
-console.log(generateMessage(animals[Math.floor(Math.random() * animals.length)], verbs[Math.floor(Math.random() * verbs.length)], items[Math.floor(Math.random() * items.length)]));
+// If running with Node.js (no document), log one random message.
+if (typeof document === "undefined") {
+  console.log(generateMessage());
+}
